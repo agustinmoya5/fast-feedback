@@ -6,7 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { FastFeedbackIcon, GithubIcon, GoogleIcon } from "@/public/icons";
 
 const Home = () => {
-  const auth = useAuth();
+  const { user, signinWithGithub, signinWithGoogle } = useAuth();
 
   return (
     <Box bg="gray.100">
@@ -46,7 +46,7 @@ const Home = () => {
           </Link>
           {`. It's the easiest way to add comments or reviews to your static site. It's still a work-in-progress, but you can try it out by logging in.`}
         </Text>
-        {auth.user ? (
+        {user ? (
           <Button
             as="a"
             href="/dashboard"
@@ -67,7 +67,7 @@ const Home = () => {
         ) : (
           <Stack>
             <Button
-              onClick={(e) => auth.signinWithGitHub()}
+              onClick={(e) => signinWithGithub()}
               backgroundColor="gray.900"
               color="white"
               fontWeight="medium"
@@ -83,7 +83,7 @@ const Home = () => {
               Sign In with GitHub
             </Button>
             <Button
-              onClick={(e) => auth.signinWithGoogle()}
+              onClick={(e) => signinWithGoogle()}
               backgroundColor="white"
               color="gray.900"
               variant="outline"
