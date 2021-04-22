@@ -6,8 +6,9 @@ import { getAllFeedback, getSite } from "@/lib/db-admin";
 import Feedback from "@/components/Feedback";
 import FeedbackLink from "@/components/FeedbackLink";
 import LoginButtons from "@/components/LoginButtons";
+import Footer from "@/components/Footer";
 
-import { FastFeedbackIcon, GithubIcon, GoogleIcon } from "@/public/icons";
+import { FastFeedbackIcon } from "@/public/icons";
 
 const SITE_ID = "GBxxkac8bI4MuAP6fo8V";
 
@@ -97,6 +98,7 @@ const Home = ({ allFeedback, site }) => {
           />
         ))}
       </Box>
+      <Footer />
     </>
   );
 };

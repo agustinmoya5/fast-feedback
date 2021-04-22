@@ -1,8 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Global, css } from "@emotion/react";
+import { MDXProvider } from "@mdx-js/react";
 
 import { DefaultSeo } from "next-seo";
 
+import MDXComponents from "@/components/MDXComponents";
 import { AuthProvider } from "@/lib/auth";
 
 import customTheme from "@/styles/theme";
@@ -36,9 +38,11 @@ const App = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={customTheme}>
       <AuthProvider>
-        <DefaultSeo {...SEO} />
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <MDXProvider components={MDXComponents}>
+          <DefaultSeo {...SEO} />
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </MDXProvider>
       </AuthProvider>
     </ChakraProvider>
   );

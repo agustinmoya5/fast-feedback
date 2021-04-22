@@ -6,6 +6,8 @@ import { useAuth } from "@/lib/auth";
 
 import { FastFeedbackIcon } from "@/public/icons";
 
+import Footer from "./Footer";
+
 const DashboardShell = ({ children }) => {
   const { user } = useAuth();
 
@@ -56,6 +58,7 @@ const DashboardShell = ({ children }) => {
       <Flex margin="0 auto" direction="column" maxW="1250px" px={[0, 8, 8]}>
         {children}
       </Flex>
+      <Footer />
     </Box>
   );
 };

@@ -21,7 +21,7 @@ const LoginButtons = () => {
           transform: "scale(0.95)",
         }}
       >
-        Sign In with GitHub
+        Continue with GitHub
       </Button>
       <Button
         onClick={() => signinWithGoogle()}
@@ -37,7 +37,7 @@ const LoginButtons = () => {
           transform: "scale(0.95)",
         }}
       >
-        Sign In with Google
+        Continue with Google
       </Button>
     </Stack>
   );
