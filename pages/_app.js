@@ -12,6 +12,9 @@ import SEO from "../next-seo.config";
 const GlobalStyle = ({ children }) => {
   return (
     <>
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+      </Head>
       <Global
         styles={css`
           html {
