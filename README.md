@@ -29,3 +29,5 @@ FIREBASE_CLIENT_EMAIL=
 - [Vercel](https://vercel.com)
 - [Firebase](https://firebase.com)
 - [Chakra UI](https://chakra-ui.com/)
+
+## Developed by Agustin Moya
