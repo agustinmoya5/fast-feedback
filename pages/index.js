@@ -38,7 +38,6 @@ const Home = ({ allFeedback }) => {
             `,
               }}
             />
-            <title>Fast Feedback</title>
           </Head>
           <FastFeedbackIcon color="black.500" boxSize="64px" mb={2} />
           <Text mb={4} fontSize="lg" py={4}>
