@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Text, Divider, Icon, Flex } from "@chakra-ui/core";
+import { Box, Heading, Text, Divider, Icon, Flex } from "@chakra-ui/react";
 import { format, parseISO } from "date-fns";
 
 const Feedback = ({ author, text, createdAt, provider, isLast, settings }) => (
