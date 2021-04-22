@@ -11,7 +11,7 @@ import {
   Divider,
   useColorMode,
 } from "@chakra-ui/react";
-import { jsx } from "@emotion/core";
+import { jsx } from "@emotion/react";
 import NextLink from "next/link";
 
 const Table = (props) => (

@@ -3,6 +3,7 @@ import { Global, css } from "@emotion/react";
 import { MDXProvider } from "@mdx-js/react";
 
 import { DefaultSeo } from "next-seo";
+import Head from "next/head";
 
 import MDXComponents from "@/components/MDXComponents";
 import { AuthProvider } from "@/lib/auth";
