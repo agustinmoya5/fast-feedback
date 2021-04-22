@@ -2,28 +2,31 @@ import Head from "next/head";
 import { Box, Button, Flex, Text, Link, Stack } from "@chakra-ui/react";
 
 import { useAuth } from "@/lib/auth";
-import { getAllFeedback } from "@/lib/db-admin";
+import { getAllFeedback, getSite } from "@/lib/db-admin";
 import Feedback from "@/components/Feedback";
 import FeedbackLink from "@/components/FeedbackLink";
 import LoginButtons from "@/components/LoginButtons";
+import Footer from "@/components/Footer";
 
-import { FastFeedbackIcon, GithubIcon, GoogleIcon } from "@/public/icons";
+import { FastFeedbackIcon } from "@/public/icons";
 
 const SITE_ID = "GBxxkac8bI4MuAP6fo8V";
 
 export async function getStaticProps(context) {
   const { feedback } = await getAllFeedback(SITE_ID);
+  const { site } = await getSite(SITE_ID);
 
   return {
     props: {
       allFeedback: feedback,
+      site,
     },
     revalidate: 1,
   };
 }
 
-const Home = ({ allFeedback }) => {
-  const { user, signinWithGoogle, signinWithGitHub } = useAuth();
+const Home = ({ allFeedback, site }) => {
+  const { user } = useAuth();
 
   return (
     <>
@@ -85,11 +88,17 @@ const Home = ({ allFeedback }) => {
         margin="0 auto"
         mt={8}
       >
-        <FeedbackLink siteId={SITE_ID} />
-        {allFeedback.map((feedback) => (
-          <Feedback key={feedback.id} {...feedback} />
+        <FeedbackLink paths={[SITE_ID]} />
+        {allFeedback.map((feedback, index) => (
+          <Feedback
+            key={feedback.id}
+            settings={site?.settings}
+            isLast={index === allFeedback.length - 1}
+            {...feedback}
+          />
         ))}
       </Box>
+      <Footer />
     </>
   );
 };
