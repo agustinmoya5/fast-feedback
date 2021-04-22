@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { Box } from "@chakra-ui/core";
+import { Box } from "@chakra-ui/react";
 import "iframe-resizer/js/iframeResizer.contentWindow";
 
 import Feedback from "@/components/Feedback";
